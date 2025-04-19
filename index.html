@@ -1,13 +1,46 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!-- указываем для того чтобы избавтся от кроказябр -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--да да та самая адаптивность-->
+    <title>Интерактивное резюме</title> <!--заголовок именно в вкладке браузера-->
+    <link rel="stylesheet" href="css/style.css">  <!--подключаем стили rel - тип файла цсс href откуда берем-->
+</head>
+<body> <!--тут начинаем писать теги хтмл-->
+    <div class="resume-container"><!--основной блок-->
+        <div class="resume" id="resume">
+            <header class="header">
+                <h1 contenteditable="true" class="editable name">Ваше Имя</h1>
+                <div contenteditable="true" class="editable contacts">
+                    <p>Email: example@email.com</p>
+                    <p>Телефон: +7 900 123-45-67</p>
+                    <p>Город: Москва</p>
+                </div>
+            </header>
+
+            <section class="section">
+                <h2 contenteditable="true" class="editable section-title">Опыт работы</h2>
+                <div contenteditable="true" class="editable content">
+                    <p><strong>Компания 1</strong> (2020-2023)</p>
+                    <p>Должность: Веб-разработчик</p>
+                    <p>Обязанности: Создание и поддержка веб-приложений</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 contenteditable="true" class="editable section-title">Образование</h2>
+                <div contenteditable="true" class="editable content">
+                    <p><strong>Университет</strong> (2016-2020)</p>
+                    <p>Специальность: Информационные технологии</p>
+                </div>
+            </section>
+        </div>
+        
+        <button class="download-btn ripple" id="downloadBtn">Скачать PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
 </html>
